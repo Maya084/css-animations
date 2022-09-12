@@ -1,5 +1,7 @@
 # CSS Transitions
 
+![Gif](transitions.gif)
+
 ```
 npm i
 ```

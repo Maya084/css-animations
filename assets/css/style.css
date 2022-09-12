@@ -24,6 +24,7 @@ body {
 .color-transition {
   background-color: rgb(197, 197, 90);
   transition-duration: 500ms;
+  transition-property: background;
 }
 .color-transition:hover {
   background-color: rgb(199, 140, 64);
@@ -32,19 +33,41 @@ body {
 .color-rotate-transition {
   background-color: rgb(116, 145, 212);
   transition-duration: 500ms;
-  transition-property: all;
+  transition-property: background, transform;
 }
 .color-rotate-transition:hover {
   background-color: rgb(32, 167, 129);
   transform: rotate(45deg);
 }
 
+.rotate-transition {
+  transition-duration: 500ms;
+  transition-property: transform;
+  background-color: rgb(229, 148, 148);
+}
+.rotate-transition:hover {
+  transform: rotate(-45deg);
+}
+
+.delay-transition {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.75, -0.81, 0.43, 1.79);
+  transition-duration: 750ms;
+}
+.delay-transition:hover {
+  transform: rotate(-180deg);
+}
+
+.trans-func .box {
+  background-color: rgb(115, 180, 153);
+  color: rgb(0, 0, 0);
+  transition-duration: 500ms;
+  transition-property: color, background, transform;
+}
 .trans-func:hover .box {
   background-color: rgb(81, 40, 88);
   color: aliceblue;
   transform: rotate(45deg);
-  transition-duration: 500ms;
-  transition-property: color, background, transform;
 }
 .trans-func:hover .box.ease-in {
   transition-timing-function: ease-in;
