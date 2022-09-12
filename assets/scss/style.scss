@@ -2,10 +2,24 @@ body {
     background-color: rgb(41, 26, 60);
 }
 
+.animated-boxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .box {
-    width: 250px;
-    height: 250px;
+    width: 215px;
+    height: 215px;
     background-color: rgb(255, 255, 255);
+    margin: 75px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    cursor: pointer;
 }
 
 .color-transition {
@@ -14,5 +28,48 @@ body {
 
     &:hover {
         background-color: rgb(199, 140, 64);
+    }
+}
+
+.color-rotate-transition {
+    background-color: rgb(116, 145, 212);
+    transition-duration: 500ms;
+    transition-property: all;
+
+    &:hover {
+        background-color: rgb(32, 167, 129);
+        transform: rotate(45deg);
+    }
+}
+
+.trans-func {
+    &:hover {
+        .box {
+            background-color: rgb(23, 70, 86);
+            color: aliceblue;
+            transform: rotate(45deg);
+            transition-duration: 500ms;
+            transition-property: background, transform;
+
+            &.ease-in {
+                transition-timing-function: ease-in;
+            }
+
+            &.ease-out {
+                transition-timing-function: ease-out;
+            }
+
+            &.ease-in-out {
+                transition-timing-function: ease-in-out;
+            }
+
+            &.linear {
+                transition-timing-function: linear;
+            }
+
+            &.custom {
+                transition-timing-function: cubic-bezier(0.75, -0.81, 0.43, 1.79);
+            }
+        }
     }
 }
